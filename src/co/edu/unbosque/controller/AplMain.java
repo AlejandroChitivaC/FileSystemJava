@@ -96,13 +96,20 @@ public class AplMain {
             String[] campos = linea.split(",");
 
             if (campos.length == 13) {
-//                System.out.println(campos[5]);
                 String genero = campos[8];
                 String zona = campos[7];
                 String mes = campos[2].split("/")[0];
                 String departamento = campos[0];
                 String edad = campos[11];
                 String modalidad = campos[5];
+
+                // Si la modalidad es "Halado", no contar el delito
+                if (modalidad.equals("HALADO")) {
+                    continue;
+//                    borrar los registros del archivo que contengan la modalidad HALADO
+
+                }
+
                 // Contar delitos por género
                 Integer contadorGenero = contadoresGenero.getOrDefault(genero, 0);
                 contadoresGenero.put(genero, contadorGenero + 1);
@@ -131,12 +138,13 @@ public class AplMain {
             }
         }
 
+
         // Calcular el porcentaje de delitos por género y mostrar los resultados
         System.out.println("Delitos por género");
         for (String genero : contadoresGenero.keySet()) {
             int cantidad = contadoresGenero.get(genero);
             double porcentaje = (double) cantidad / totalDelitos * 100;
-            String percent= df.format(porcentaje);
+            String percent = df.format(porcentaje);
             System.out.println("Género: " + genero + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
         }
         System.out.println("-----------------------------------------------------------");
@@ -145,7 +153,7 @@ public class AplMain {
         for (String zona : contadoresZona.keySet()) {
             int cantidad = contadoresZona.get(zona);
             double porcentaje = (double) cantidad / totalDelitos * 100;
-            String percent= df.format(porcentaje);
+            String percent = df.format(porcentaje);
             System.out.println("Zona: " + zona + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
         }
         System.out.println("-----------------------------------------------------------");
@@ -153,7 +161,7 @@ public class AplMain {
         for (String mes : contadoresMes.keySet()) {
             int cantidad = contadoresMes.get(mes);
             double porcentaje = (double) cantidad / totalDelitos * 100;
-            String percent= df.format(porcentaje);
+            String percent = df.format(porcentaje);
             System.out.println("Mes: " + mes + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
         }
         System.out.println("-----------------------------------------------------------");
@@ -161,7 +169,7 @@ public class AplMain {
         for (String departamento : contadoresDepartamento.keySet()) {
             int cantidad = contadoresDepartamento.get(departamento);
             double porcentaje = (double) cantidad / totalDelitos * 100;
-            String percent= df.format(porcentaje);
+            String percent = df.format(porcentaje);
             System.out.println("Departamento: " + departamento + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
         }
         System.out.println("-----------------------------------------------------------");
@@ -169,7 +177,7 @@ public class AplMain {
         for (String edad : contadoresEdad.keySet()) {
             int cantidad = contadoresEdad.get(edad);
             double porcentaje = (double) cantidad / totalDelitos * 100;
-            String percent= df.format(porcentaje);
+            String percent = df.format(porcentaje);
             System.out.println("Edad: " + edad + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
         }
         System.out.println("-----------------------------------------------------------");
@@ -177,18 +185,14 @@ public class AplMain {
         for (String modalidad : contadoresModalidad.keySet()) {
             int cantidad = contadoresModalidad.get(modalidad);
             double porcentaje = (double) cantidad / totalDelitos * 100;
-            String percent= df.format(porcentaje);
+            String percent = df.format(porcentaje);
             System.out.println("Modalidad: " + modalidad + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
         }
         System.out.println("-----------------------------------------------------------");
-        JOptionPane.showMessageDialog(null,"Total de delitos: " + totalDelitos);
+        JOptionPane.showMessageDialog(null, "Total de delitos: " + totalDelitos);
         System.out.println("Total de delitos: " + totalDelitos);
 
-
-
         scanner.close();
-
-
 
     }
 }

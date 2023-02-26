@@ -1,26 +1,43 @@
-import java.io.*;
+package co.edu.unbosque.controller;
+
+import javax.swing.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.util.Scanner;
 
 public class AplMain {
-    public static void main(String[] args) throws IOException {
-        File file = new File("Archivo1.txt");
-        File file2 = new File("Archivo2.txt");
 
-        PrintWriter my_pw = new PrintWriter("Union.txt");
-        BufferedReader my_br = new BufferedReader(new FileReader("Archivo1.txt"));
-        String my_line = my_br.readLine();
-        while (my_line != null) {
-            my_pw.println(my_line);
-            my_line = my_br.readLine();
+    public static void main(String[] args) {
+
+        try {
+            File archivo = new File("src/archivo-1.txt");
+            DecimalFormat df = new DecimalFormat("#.##");
+            df.setRoundingMode(RoundingMode.DOWN);
+            double s=archivo.length();
+            String size = df.format(archivo.length());
+            double kb=s/1000;
+            double megabytes= s / (1024 * 1024);
+            String mb = df.format(megabytes);
+
+
+            Scanner scanner = new Scanner(archivo);
+
+            while (scanner.hasNextLine()) {
+                String linea = scanner.nextLine();
+                System.out.println(linea);
+            }
+            JOptionPane.showMessageDialog(null,"El tamaño del archivo es: "+size+" bytes");
+            JOptionPane.showMessageDialog(null,"El tamaño del archivo es: "+kb+" Kilobytes");
+            JOptionPane.showMessageDialog(null,"El tamaño del archivo es: "+mb+" Megabytes");
+            scanner.close();
+
+        } catch (FileNotFoundException e) {
+           JOptionPane.showMessageDialog(null,"El archivo no se encontró.","Error",JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
         }
-        my_br = new BufferedReader(new FileReader("Archivo2.txt"));
-        my_line = my_br.readLine();
-        while (my_line != null) {
-            my_pw.println(my_line);
-            my_line = my_br.readLine();
-        }
-        my_pw.flush();
-        my_br.close();
-        my_pw.close();
-        System.out.println("The first two files have been merged into the third file successfully.");
+
+
     }
 }

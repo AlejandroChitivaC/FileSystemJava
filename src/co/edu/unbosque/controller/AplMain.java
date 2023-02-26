@@ -94,7 +94,7 @@ public class AplMain {
             String[] campos = linea.split(",");
 
             if (campos.length == 13) {
-//                System.out.println(campos[2].trim());
+//                System.out.println(campos[5]);
                 String genero = campos[8];
                 String zona = campos[7];
                 String mes = campos[2].split("/")[0];
@@ -168,6 +168,8 @@ public class AplMain {
         System.out.println("-----------------------------------------------------------");
         JOptionPane.showMessageDialog(null,"Total de delitos: " + totalDelitos);
         System.out.println("Total de delitos: " + totalDelitos);
+
+
 
         scanner.close();
 

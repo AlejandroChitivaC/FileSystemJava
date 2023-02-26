@@ -80,12 +80,14 @@ public class AplMain {
             return;
         }
 
+
         // Crear un objeto HashMap para almacenar los contadores por género
         Map<String, Integer> contadoresGenero = new HashMap<>();
         Map<String, Integer> contadoresZona = new HashMap<>();
         Map<String, Integer> contadoresMes = new HashMap<>();
         Map<String, Integer> contadoresDepartamento = new HashMap<>();
         Map<String, Integer> contadoresEdad = new HashMap<>();
+        Map<String, Integer> contadoresModalidad = new HashMap<>();
         int totalDelitos = 0;
 
         // Leer cada línea del archivo CSV y contar los delitos por género
@@ -100,6 +102,7 @@ public class AplMain {
                 String mes = campos[2].split("/")[0];
                 String departamento = campos[0];
                 String edad = campos[11];
+                String modalidad = campos[5];
                 // Contar delitos por género
                 Integer contadorGenero = contadoresGenero.getOrDefault(genero, 0);
                 contadoresGenero.put(genero, contadorGenero + 1);
@@ -119,6 +122,10 @@ public class AplMain {
                 // Contar delitos por edad
                 Integer contadorEdad = contadoresEdad.getOrDefault(edad, 0);
                 contadoresEdad.put(edad, contadorEdad + 1);
+
+                // Contar delitos por modalidad
+                Integer contadorModalidad = contadoresModalidad.getOrDefault(modalidad, 0);
+                contadoresModalidad.put(modalidad, contadorModalidad + 1);
 
                 totalDelitos++;
             }
@@ -164,6 +171,14 @@ public class AplMain {
             double porcentaje = (double) cantidad / totalDelitos * 100;
             String percent= df.format(porcentaje);
             System.out.println("Edad: " + edad + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
+        }
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("Delitos por modalidad");
+        for (String modalidad : contadoresModalidad.keySet()) {
+            int cantidad = contadoresModalidad.get(modalidad);
+            double porcentaje = (double) cantidad / totalDelitos * 100;
+            String percent= df.format(porcentaje);
+            System.out.println("Modalidad: " + modalidad + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
         }
         System.out.println("-----------------------------------------------------------");
         JOptionPane.showMessageDialog(null,"Total de delitos: " + totalDelitos);

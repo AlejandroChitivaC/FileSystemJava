@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.time.Instant;
 import java.util.Map;
 import java.util.Scanner;
 import java.io.BufferedReader;
@@ -193,6 +194,8 @@ public class AplMain {
         System.out.println("Total de delitos: " + totalDelitos);
 
         scanner.close();
+        String hoy= Instant.now().toString();
+        System.out.println("Fecha y hora de ejecución: "+hoy);
 
     }
 }

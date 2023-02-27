@@ -1,0 +1,32 @@
+Juan Pérez,28,Programador
+María Gómez,35,Diseñadora
+Luis Hernández,42,Ingeniero
+Ana García,30,Contadora
+Sofía Martínez,24,Estudiante
+Daniel Pérez,37,Abogado
+Miguel Torres,52,Empresario
+Adriana Reyes,29,Médica
+Jorge Fernández,41,Arquitecto
+Rosa Sánchez,31,Periodista
+Gabriel Ortiz,27,Programador
+Carla Vargas,33,Psicóloga
+Ricardo Aguilar,49,Ingeniero
+Lucía Morales,28,Artista
+Mario González,36,Consultor
+Andrea Hernández,45,Profesora
+Fernando Castro,30,Diseñador
+Marina Ramírez,39,Escritora
+Diego López,25,Estudiante
+Valeria Núñez,32,Contadora
+Antonio Jiménez,42,Ingeniero
+Laura Gómez,27,Periodista
+Pablo Rodríguez,38,Médico
+Sara Torres,26,Programadora
+Ismael Ruiz,33,Ingeniero
+Diana Flores,31,Abogada
+Pedro Sánchez,29,Arquitecto
+Ana Morales,34,Consultora
+Roberto Pérez,50,Empresario
+María Álvarez,22,Estudiante
+
+

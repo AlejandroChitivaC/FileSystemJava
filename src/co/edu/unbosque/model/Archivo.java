@@ -1,5 +1,7 @@
 package co.edu.unbosque.model;
 
+import co.edu.unbosque.view.Vista;
+
 import java.io.*;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -9,10 +11,11 @@ import javax.swing.JOptionPane;
 
 
 public class Archivo {
+    public static Vista view = new Vista();
     private static DecimalFormat df = new DecimalFormat("#.##");
 
     // Método para obtener el tamaño de un archivo en bytes, kilobytes y megabytes
-    public static void obtenerTamanioArchivo(File archivo) {
+    public void getFileSize(File archivo) {
         df.setRoundingMode(RoundingMode.DOWN);
         double s = archivo.length();
         String size = df.format(archivo.length());
@@ -20,9 +23,9 @@ public class Archivo {
         double megabytes = s / (1024 * 1024);
         String mb = df.format(megabytes);
 
-        JOptionPane.showMessageDialog(null, "El tamaño del archivo es: " + size + " bytes");
-        JOptionPane.showMessageDialog(null, "El tamaño del archivo es: " + kb + " Kilobytes");
-        JOptionPane.showMessageDialog(null, "El tamaño del archivo es: " + mb + " Megabytes");
+        view.showMsj("El tamaño del archivo es: " + size + " bytes");
+        view.showMsj("El tamaño del archivo es: " + kb + " Kilobytes");
+        view.showMsj("El tamaño del archivo es: " + mb + " Megabytes");
     }
     private static void convertirArchivoCSV(String archivoTxt, String archivoCsv) {
         try (BufferedReader lector = new BufferedReader(new FileReader(archivoTxt));
@@ -41,10 +44,10 @@ public class Archivo {
                 }
                 writer.append("\n");
             }
-            JOptionPane.showMessageDialog(null, "El archivo se ha convertido a CSV correctamente.");
+            view.showMsj("El archivo se ha convertido a CSV correctamente.");
         } catch (IOException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error al leer o escribir el archivo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            view.showError("Error al leer o escribir el archivo: " + e.getMessage());
         }
     }
 
@@ -64,10 +67,10 @@ public class Archivo {
                 }
                 writer.append("\n");
             }
-            JOptionPane.showMessageDialog(null, "El archivo se ha convertido a CSV correctamente.");
+            view.showMsj("El archivo se ha convertido a CSV correctamente.");
         } catch (IOException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error al leer o escribir el archivo: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            view.showError("Error al leer o escribir el archivo: " + e.getMessage());
         }
     }
 
@@ -77,21 +80,21 @@ public class Archivo {
         try {
             scanner = new Scanner(archivo);
         } catch (FileNotFoundException e) {
-            System.out.println("El archivo no existe.");
+            view.showError("El archivo no existe.");
             return;
         }
     }
 
-    public void ejecutarBatEnCarpeta(String rutaCarpeta, String nombreArchivoBat) {
+    public void runBatOnFolder(String folderPath, String fileName) {
         try {
             // Construir el comando para ejecutar el archivo bat en la carpeta especificada
-            ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", nombreArchivoBat);
-            pb.directory(new File(rutaCarpeta));
+            ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", fileName);
+            pb.directory(new File(folderPath));
 
             // Iniciar el proceso
             Process proceso = pb.start();
             JOptionPane.showMessageDialog(null, "El proceso .bat se ha iniciado");
-            System.out.println(proceso.info());
+            view.consoleMsj(proceso.info().toString());
 
             // Esperar a que termine el proceso
             proceso.waitFor();

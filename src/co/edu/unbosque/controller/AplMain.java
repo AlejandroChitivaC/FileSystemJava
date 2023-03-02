@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
@@ -17,9 +16,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import java.io.FileReader;
 import java.util.HashMap;
-import java.util.Map;
 
 
 public class AplMain {
@@ -28,7 +25,7 @@ public class AplMain {
 
     public static void main(String[] args) {
         Archivo model = new Archivo();
-        model.ejecutarBatEnCarpeta("src","Archivos.bat");
+        model.runBatOnFolder("src","Archivos.bat");
 
         DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.DOWN);

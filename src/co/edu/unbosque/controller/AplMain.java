@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.Scanner;
 import java.io.BufferedReader;
@@ -91,11 +93,11 @@ public class AplMain {
         Map<String, Integer> contadoresModalidad = new HashMap<>();
         int totalDelitos = 0;
 
-        // Leer cada línea del archivo CSV y contar los delitos por género
+        // Leer cada línea del archivo CSV
         while (scanner.hasNextLine()) {
             String linea = scanner.nextLine();
             String[] campos = linea.split(",");
-
+            totalDelitos++;
             if (campos.length == 13) {
                 String genero = campos[8];
                 String zona = campos[7];
@@ -103,13 +105,12 @@ public class AplMain {
                 String departamento = campos[0];
                 String edad = campos[11];
                 String modalidad = campos[5];
-
-                // Si la modalidad es "Halado", no contar el delito
                 if (modalidad.equals("HALADO")) {
-                    continue;
-//                    borrar los registros del archivo que contengan la modalidad HALADO
 
+                    totalDelitos--;
+                    continue;
                 }
+
 
                 // Contar delitos por género
                 Integer contadorGenero = contadoresGenero.getOrDefault(genero, 0);
@@ -134,8 +135,6 @@ public class AplMain {
                 // Contar delitos por modalidad
                 Integer contadorModalidad = contadoresModalidad.getOrDefault(modalidad, 0);
                 contadoresModalidad.put(modalidad, contadorModalidad + 1);
-
-                totalDelitos++;
             }
         }
 
@@ -194,12 +193,26 @@ public class AplMain {
         System.out.println("Total de delitos: " + totalDelitos);
 
         scanner.close();
-        String hoy= Instant.now().toString();
-        System.out.println("Fecha y hora de ejecución: "+hoy);
+//        String hoy = Instant.now().toString();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+
+        System.out.println("yyyy/MM/dd HH:mm:ss-> " + dtf.format(LocalDateTime.now()));
+        String now = dtf.format(LocalDateTime.now());
+        now= now.toString();
+        JOptionPane.showMessageDialog(null, "Fecha y hora de ejecución: " + now);
+
+
+        File archivoAntiguo = new File("src/archivo-1.txt");
+        File archivoNuevo = new File("src/delito" + now + ".txt");
+        if (archivoAntiguo.renameTo(archivoNuevo)) {
+            System.out.println("El archivo se ha renombrado correctamente.");
+        } else {
+            System.out.println("No se ha podido renombrar el archivo.");
+
+        }
 
     }
 }
-
 
 
 

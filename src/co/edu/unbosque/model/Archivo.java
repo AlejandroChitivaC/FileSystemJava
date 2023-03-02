@@ -16,6 +16,7 @@ public class Archivo {
 
     // Método para obtener el tamaño de un archivo en bytes, kilobytes y megabytes
     public void getFileSize(File archivo) {
+
         df.setRoundingMode(RoundingMode.DOWN);
         double s = archivo.length();
         String size = df.format(archivo.length());
@@ -27,9 +28,9 @@ public class Archivo {
         view.showMsj("El tamaño del archivo es: " + kb + " Kilobytes");
         view.showMsj("El tamaño del archivo es: " + mb + " Megabytes");
     }
-    private static void convertirArchivoCSV(String archivoTxt, String archivoCsv) {
-        try (BufferedReader lector = new BufferedReader(new FileReader(archivoTxt));
-             FileWriter writer = new FileWriter(archivoCsv)) {
+    private static void txtToCsv(String txtFile, String csvFile) {
+        try (BufferedReader lector = new BufferedReader(new FileReader(txtFile));
+             FileWriter writer = new FileWriter(csvFile)) {
             // Leer cada línea del archivo de texto y escribir en el archivo CSV
             String linea;
             while ((linea = lector.readLine()) != null) {

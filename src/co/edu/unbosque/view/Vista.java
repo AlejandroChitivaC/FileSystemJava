@@ -1,7 +1,6 @@
 package co.edu.unbosque.view;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,42 +9,22 @@ import java.io.FileOutputStream;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 public class Vista {
-    public int opcion;
-
-    public void MainMenu() {
-        opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "" +
-                "1. Cargar archivo\n" +
-                "2. Mostrar tamaños del archivo en bytes, kb y mb\n" +
-                "3. Buscar por Codigo\n" +
-                "4. Buscar por Nombre\n" +
-                "5. Buscar por Descripcion\n"));
-        switch (opcion) {
-            case 1:
-                uploadFile();
-                break;
-            case 2:
-
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            default:
-                showMsj("Opcion no valida");
-                break;
-        }
-
-
-    }
-
-    public void showMsj(String msj) {
+    public String showMsj(String msj) {
         JOptionPane.showMessageDialog(null, msj);
+        return msj;
     }
+    public String getMsj(String msj) {
+        JOptionPane.showInputDialog(null,(msj));
+        return msj;
+    }
+
 
     public void consoleMsj(String msj) {
         System.out.println(msj);
+    }
+
+    public void showError(String msj) {
+        JOptionPane.showMessageDialog(null, msj, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
     public void uploadFile() {
@@ -87,9 +66,5 @@ public class Vista {
             // El usuario ha cancelado la selección
             JOptionPane.showMessageDialog(null, "Selección cancelada");
         }
-    }
-
-    public void showError(String msj) {
-        JOptionPane.showMessageDialog(null, msj, "Error", JOptionPane.ERROR_MESSAGE);
     }
 }

@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4ff2d9d7-a1bc-4b75-b879-e1d1788aabc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/controller/AplMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/controller/AplMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/archivo-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/model/Archivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/model/Archivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/view/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/view/Vista.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,12 +144,23 @@
       <workItem from="1677525442179" duration="647000" />
       <workItem from="1677713899077" duration="125000" />
       <workItem from="1677714067577" duration="5921000" />
-      <workItem from="1677762017903" duration="6318000" />
+      <workItem from="1677762017903" duration="9190000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

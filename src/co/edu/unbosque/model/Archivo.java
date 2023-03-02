@@ -98,4 +98,6 @@ public class Archivo {
     public void setTxtFile(File txtFile) {
         this.txtFile = txtFile;
     }
+
+
 }

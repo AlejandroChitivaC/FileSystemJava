@@ -6,28 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4ff2d9d7-a1bc-4b75-b879-e1d1788aabc7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/01.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/02.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/03.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/04.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/05.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/06.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/07.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/08.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/09.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/13.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/14.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/15.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/16.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/17.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/18.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/19.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/archivo-1.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/archivo-1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/model/Archivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/model/Archivo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/view/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/view/Vista.java" afterDir="false" />
     </list>
@@ -80,8 +60,8 @@
       <recent name="C:\Users\alejo\Escritorio\Taller1BD\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\alejo\Escritorio\DatabasesWork1\src" />
       <recent name="C:\Users\alejo\Escritorio\DatabasesWork1" />
+      <recent name="C:\Users\alejo\Escritorio\DatabasesWork1\src" />
       <recent name="C:\Users\alejo\Escritorio\DatabasesWork1\src\co\edu\unbosque\controller" />
       <recent name="C:\Users\alejo\Escritorio\Taller1BD" />
       <recent name="C:\Users\alejo\Escritorio\Taller1BD\src" />
@@ -164,7 +144,7 @@
       <workItem from="1677525442179" duration="647000" />
       <workItem from="1677713899077" duration="125000" />
       <workItem from="1677714067577" duration="5921000" />
-      <workItem from="1677762017903" duration="14863000" />
+      <workItem from="1677762017903" duration="17864000" />
     </task>
     <servers />
   </component>

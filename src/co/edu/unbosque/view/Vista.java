@@ -50,11 +50,12 @@ public class Vista {
                 case 1:
                     model.getFileSize(txtFile);
                     csv = model.createCsv(txtFile, new File("src/archivo-1.csv"));
-//                    model.readFile(csv);
                     break;
                 case 2:
-                    txtFile.delete();
                     csv.delete();
+                    //Creo la carpeta Apellidos1_Apellidos2 para guardar los archivos
+                    model.runBatOnFolder("src","Rename.bat");
+                    model.runBatOnFolder("src","Archivos.bat");
                     System.exit(0);
                     break;
             }

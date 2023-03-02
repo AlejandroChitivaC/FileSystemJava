@@ -5,12 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ff2d9d7-a1bc-4b75-b879-e1d1788aabc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/co/edu/unbosque/model/Logica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/archivo-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Archivos.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/Archivos.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/11.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChitivaCastillo_PedrazaSanabria/Numeros/9.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/controller/AplMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/controller/AplMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/model/Archivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/co/edu/unbosque/model/Archivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/co/edu/unbosque/model/Logica.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +87,7 @@
       <recent name="C:\Users\alejo\Escritorio\Taller1BD\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SistemasDeArchivos">
+  <component name="RunManager" selected="Application.AplMain">
     <configuration name="AplMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="co.edu.unbosque.controller.AplMain" />
       <module name="Taller1BD" />
@@ -110,8 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SistemasDeArchivos" />
         <item itemvalue="Application.AplMain" />
+        <item itemvalue="Application.SistemasDeArchivos" />
         <item itemvalue="Application.FileReader" />
       </list>
     </recent_temporary>
@@ -131,7 +150,7 @@
       <workItem from="1677525442179" duration="647000" />
       <workItem from="1677713899077" duration="125000" />
       <workItem from="1677714067577" duration="5921000" />
-      <workItem from="1677762017903" duration="678000" />
+      <workItem from="1677762017903" duration="3328000" />
     </task>
     <servers />
   </component>

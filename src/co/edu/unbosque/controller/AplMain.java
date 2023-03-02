@@ -1,5 +1,7 @@
 package co.edu.unbosque.controller;
 
+import co.edu.unbosque.model.Archivo;
+
 import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,9 +17,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvValidationException;
-
 import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +24,12 @@ import java.util.Map;
 
 public class AplMain {
 
+
+
     public static void main(String[] args) {
+        Archivo model = new Archivo();
+        model.ejecutarBatEnCarpeta("src","Archivos.bat");
+
         DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.DOWN);
         try {

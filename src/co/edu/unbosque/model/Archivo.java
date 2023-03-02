@@ -1,19 +1,12 @@
-package co.edu.unbosque.controller;
+package co.edu.unbosque.model;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvValidationException;
 
 public class Archivo {
     private static DecimalFormat df = new DecimalFormat("#.##");
@@ -88,5 +81,29 @@ public class Archivo {
             return;
         }
     }
+
+    public void ejecutarBatEnCarpeta(String rutaCarpeta, String nombreArchivoBat) {
+        try {
+            // Construir el comando para ejecutar el archivo bat en la carpeta especificada
+            ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/c", nombreArchivoBat);
+            pb.directory(new File(rutaCarpeta));
+
+            // Iniciar el proceso
+            Process proceso = pb.start();
+            JOptionPane.showMessageDialog(null, "El proceso .bat se ha iniciado");
+            System.out.println(proceso.info());
+
+            // Esperar a que termine el proceso
+            proceso.waitFor();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(proceso.getInputStream()));
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                System.out.println(linea);
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

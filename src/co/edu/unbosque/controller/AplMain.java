@@ -25,7 +25,7 @@ public class AplMain {
 
     public static void main(String[] args) {
         Archivo model = new Archivo();
-        model.runBatOnFolder("src","Archivos.bat");
+        model.runBatOnFolder("src", "Folder_files.bat");
 
         DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.DOWN);

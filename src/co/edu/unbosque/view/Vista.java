@@ -50,12 +50,16 @@ public class Vista {
                 case 1:
                     model.getFileSize(txtFile);
                     csv = model.createCsv(txtFile, new File("src/archivo-1.csv"));
+                    model.analizarArchivoDelitos();
+
+                    this.showMsj("Revise la consola por favor!");
+
                     break;
                 case 2:
                     csv.delete();
                     //Creo la carpeta Apellidos1_Apellidos2 para guardar los archivos
+                    model.runBatOnFolder("src", "Folder_files.bat");
                     model.runBatOnFolder("src","Rename.bat");
-                    model.runBatOnFolder("src","Archivos.bat");
                     System.exit(0);
                     break;
             }
@@ -66,9 +70,8 @@ public class Vista {
 
     }
 
-    public String showMsj(String msj) {
+    public void showMsj(String msj) {
         JOptionPane.showMessageDialog(null, msj);
-        return msj;
     }
 
     public String getMsj(String msj) {

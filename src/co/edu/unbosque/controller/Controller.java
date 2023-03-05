@@ -18,9 +18,5 @@ public class Controller {
     public void funcionar() {
         txtFile = new File("src/archivo-1.txt");
         view.mainMenu();
-
-//        model.getFileSize(txtFile);
-//        model.createCsv(txtFile, new File("src/archivo-1.csv"));
-
     }
 }

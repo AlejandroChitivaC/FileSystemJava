@@ -97,7 +97,6 @@ public class Archivo {
                 String edad = campos[11];
                 String modalidad = campos[5];
                 if (modalidad.equals("HALADO")) {
-
                     totalDelitos--;
                     continue;
                 }

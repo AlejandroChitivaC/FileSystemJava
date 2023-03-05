@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import co.edu.unbosque.model.Archivo;
+import co.edu.unbosque.model.Directorio;
 
 import javax.swing.*;
 
@@ -12,6 +13,7 @@ import static javax.swing.JOptionPane.showMessageDialog;
 
 public class Vista {
     Archivo model = new Archivo();
+    Directorio dir = new Directorio();
     File txtFile = new File("src/archivo-1.txt");
 
 
@@ -53,17 +55,27 @@ public class Vista {
                     model.analizarArchivoDelitos();
                     break;
                 case 2:
-                    csv.delete();
                     //Creo la carpeta Apellidos1_Apellidos2 para guardar los archivos
                     model.runBatOnFolder("src", "Folder_files.bat");
-                    model.splitFile("src/archivo-1.txt", "src/ChitivaCastillo_PedrazaSanabria/Numeros",20);
+                    model.splitFile("src/archivo-1.txt", "src/ChitivaCastillo_PedrazaSanabria/Numeros", 20);
+                    //Listar contenido de la carpeta ChitivaCastillo_PedrazaSanabria
+                    dir.listarContenidoCarpeta("src/ChitivaCastillo_PedrazaSanabria");
+                    //Listar contenido de la carpeta Numeros
+                    dir.listarContenidoCarpeta("src/ChitivaCastillo_PedrazaSanabria/Numeros");
+                    //Mostrar porcentaje de archivos en la carpeta ChitivaCastillo_PedrazaSanabria
+                    dir.percentFiles("src/ChitivaCastillo_PedrazaSanabria");
+                    //Mostrar porcentaje de archivos en la carpeta Numeros
+                    dir.percentFiles("src/ChitivaCastillo_PedrazaSanabria/Numeros");
                     model.runBatOnFolder("src", "Rename.bat");
+                    //borrar archivo-1.csv
+                    csv.delete();
+                    txtFile.delete();
                     System.exit(0);
                     break;
             }
         } catch (NumberFormatException e) {
             showError("Debe ingresar un número");
-            mainMenu();
+            menuOptions();
         }
 
     }

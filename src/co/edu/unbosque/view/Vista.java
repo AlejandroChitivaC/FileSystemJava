@@ -51,15 +51,13 @@ public class Vista {
                     model.getFileSize(txtFile);
                     csv = model.createCsv(txtFile, new File("src/archivo-1.csv"));
                     model.analizarArchivoDelitos();
-
-                    this.showMsj("Revise la consola por favor!");
-
                     break;
                 case 2:
                     csv.delete();
                     //Creo la carpeta Apellidos1_Apellidos2 para guardar los archivos
                     model.runBatOnFolder("src", "Folder_files.bat");
-                    model.runBatOnFolder("src","Rename.bat");
+                    model.splitFile("src/archivo-1.txt", "src/ChitivaCastillo_PedrazaSanabria/Numeros",20);
+                    model.runBatOnFolder("src", "Rename.bat");
                     System.exit(0);
                     break;
             }
@@ -87,11 +85,16 @@ public class Vista {
         JOptionPane.showMessageDialog(null, msj, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
+    public void showWarning(String msj) {
+        JOptionPane.showMessageDialog(null, msj, "Alerta", JOptionPane.WARNING_MESSAGE);
+    }
+
+
     public void uploadFile() {
         // Crear un JFileChooser
         JFileChooser fileChooser = new JFileChooser();
         // Mostrar el diálogo para seleccionar un archivo
-        int result = fileChooser.showOpenDialog(null);
+        var result = fileChooser.showOpenDialog(null);
 
         if (result == JFileChooser.APPROVE_OPTION) {
             // El usuario ha seleccionado un archivo

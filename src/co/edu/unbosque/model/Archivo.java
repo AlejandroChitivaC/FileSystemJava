@@ -2,7 +2,6 @@ package co.edu.unbosque.model;
 
 import co.edu.unbosque.view.Vista;
 
-import java.awt.*;
 import java.io.*;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -129,74 +128,12 @@ public class Archivo {
                 contadoresModalidad.put(modalidad, contadorModalidad + 1);
             }
         }
-
-        // Calcular el porcentaje de delitos por género y mostrar los resultados
-        System.out.println("Delitos por género");
-        for (String genero : contadoresGenero.keySet()) {
-            int cantidad = contadoresGenero.get(genero);
-            double porcentaje = (double) cantidad / totalDelitos * 100;
-            String percent = df.format(porcentaje);
-            System.out.println("Género: " + genero + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
-        }
-        System.out.println("-----------------------------------------------------------");
-
-//        System.out.println("Delitos por zona");
-//        for (String zona : contadoresZona.keySet()) {
-//            String[] columnas = {"Edad", "Cantidad de Delitos", "Porcentaje (%)"};
-//            String[][] datos = new String[contadoresEdad.size()][3];
-//            int cantidad = contadoresZona.get(zona);
-//            double porcentaje = (double) cantidad / totalDelitos * 100;
-//            String percent = df.format(porcentaje);
-//            System.out.println("Zona: " + zona + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
-//            JTable tabla = new JTable(datos, columnas);
-//            JOptionPane.showMessageDialog(null, new JScrollPane(tabla), "Delitos por Edad", JOptionPane.PLAIN_MESSAGE);
-//        }
-//        System.out.println("-----------------------------------------------------------");
-//        System.out.println("Delitos por mes");
-//        for (String mes : contadoresMes.keySet()) {
-//            int cantidad = contadoresMes.get(mes);
-//            double porcentaje = (double) cantidad / totalDelitos * 100;
-//            String percent = df.format(porcentaje);
-//            System.out.println("Mes: " + mes + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
-//        }
-//        System.out.println("-----------------------------------------------------------");
-//        System.out.println("Delitos por departamento");
-//        for (String departamento : contadoresDepartamento.keySet()) {
-//            int cantidad = contadoresDepartamento.get(departamento);
-//            double porcentaje = (double) cantidad / totalDelitos * 100;
-//            String percent = df.format(porcentaje);
-//            System.out.println("Departamento: " + departamento + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
-//        }
-//        System.out.println("-----------------------------------------------------------");
-//        System.out.println("Delitos por edad");
-//        for (String edad : contadoresEdad.keySet()) {
-//            int cantidad = contadoresEdad.get(edad);
-//            double porcentaje = (double) cantidad / totalDelitos * 100;
-//            String percent = df.format(porcentaje);
-//            System.out.println("Edad: " + edad + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
-//        }
-//        System.out.println("-----------------------------------------------------------");
-//        System.out.println("Delitos por modalidad");
-//        for (String modalidad : contadoresModalidad.keySet()) {
-//            int cantidad = contadoresModalidad.get(modalidad);
-//            double porcentaje = (double) cantidad / totalDelitos * 100;
-//            String percent = df.format(porcentaje);
-//            System.out.println("Modalidad: " + modalidad + ", cantidad de delitos: " + cantidad + ", porcentaje: " + percent + "%");
-//        }
-//        System.out.println("-----------------------------------------------------------");
-//        JOptionPane.showMessageDialog(null, "Total de delitos: " + totalDelitos);
-//        System.out.println("Total de delitos: " + totalDelitos);
-
         mostrarTabla(contadoresGenero, "Delitos por Género", "Género");
         mostrarTabla(contadoresZona, "Delitos por Zona", "Zona");
         mostrarTabla(contadoresMes, "Delitos por Mes", "Mes");
         mostrarTabla(contadoresDepartamento, "Delitos por Departamento", "Departamento");
         mostrarTabla(contadoresEdad, "Delitos por Edad", "Edad");
         mostrarTabla(contadoresModalidad, "Delitos por Modalidad", "Modalidad");
-
-
-
-
     }
 
 
@@ -221,6 +158,26 @@ public class Archivo {
 
 
 
+    public static void splitFile(String inputFile, String outputFolder, int numFiles) {
+        try (Scanner scanner = new Scanner(new File(inputFile))) {
+            int numRecords = 1;
+            for (int i = 1; i <= numFiles && scanner.hasNextLine(); i++) {
+                String outputFile = outputFolder + File.separator + String.format("%02d.txt", i);
+                try (PrintWriter writer = new PrintWriter(new File(outputFile))) {
+                    for (int j = 0; j < numRecords && scanner.hasNextLine(); j++) {
+                        String line = scanner.nextLine();
+                        writer.println(line);
+                    }
+                    numRecords++;
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void runBatOnFolder(String folderPath, String fileName) {
         try {
@@ -230,7 +187,8 @@ public class Archivo {
 
             // Iniciar el proceso
             Process proceso = pb.start();
-            JOptionPane.showMessageDialog(null, "El proceso .bat se ha iniciado");
+            view.showWarning("La ejecución de los procesos .bat han iniciado");
+
             view.consoleMsj(proceso.info().toString());
 
             // Esperar a que termine el proceso

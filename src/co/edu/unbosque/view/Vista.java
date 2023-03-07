@@ -11,12 +11,27 @@ import java.io.FileOutputStream;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
+/**
+ * The type Vista.
+ */
 public class Vista {
+    /**
+     * The Model.
+     */
     Archivo model = new Archivo();
+    /**
+     * The Dir.
+     */
     Directorio dir = new Directorio();
+    /**
+     * The Txt file.
+     */
     File txtFile = new File("src/archivo-1.txt");
 
 
+    /**
+     * Main menu.
+     */
     public void mainMenu() {
         try {
             int opcion = Integer.parseInt(JOptionPane.showInputDialog("Seleccione una opción:\n" +
@@ -37,6 +52,9 @@ public class Vista {
 
     }
 
+    /**
+     * Menu options.
+     */
     public void menuOptions() {
         File csv;
         csv = new File("src/archivo-1.csv");
@@ -80,28 +98,57 @@ public class Vista {
 
     }
 
+    /**
+     * Show msj.
+     *
+     * @param msj the msj
+     */
     public void showMsj(String msj) {
         JOptionPane.showMessageDialog(null, msj);
     }
 
+    /**
+     * Gets msj.
+     *
+     * @param msj the msj
+     * @return the msj
+     */
     public String getMsj(String msj) {
         JOptionPane.showInputDialog(null, (msj));
         return msj;
     }
 
+    /**
+     * Console msj.
+     *
+     * @param msj the msj
+     */
     public void consoleMsj(String msj) {
         System.out.println(msj);
     }
 
+    /**
+     * Show error.
+     *
+     * @param msj the msj
+     */
     public void showError(String msj) {
         JOptionPane.showMessageDialog(null, msj, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
+    /**
+     * Show warning.
+     *
+     * @param msj the msj
+     */
     public void showWarning(String msj) {
         JOptionPane.showMessageDialog(null, msj, "Alerta", JOptionPane.WARNING_MESSAGE);
     }
 
 
+    /**
+     * Upload file.
+     */
     public void uploadFile() {
         // Crear un JFileChooser
         JFileChooser fileChooser = new JFileChooser();
@@ -143,11 +190,21 @@ public class Vista {
         menuOptions();
     }
 
-    //GETTER AND SETTER OF THE FILE
+    /**
+     * Gets txt file.
+     *
+     * @return the txt file
+     */
+//GETTER AND SETTER OF THE FILE
     public File getTxtFile() {
         return txtFile;
     }
 
+    /**
+     * Sets txt file.
+     *
+     * @param txtFile the txt file
+     */
     public void setTxtFile(File txtFile) {
         this.txtFile = txtFile;
     }

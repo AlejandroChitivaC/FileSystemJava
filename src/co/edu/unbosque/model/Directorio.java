@@ -5,11 +5,22 @@ import co.edu.unbosque.view.Vista;
 import java.io.File;
 import java.text.DecimalFormat;
 
+/**
+ * The type Directorio.
+ */
 public class Directorio {
+    /**
+     * The constant view.
+     */
     public static Vista view = new Vista();
     private static DecimalFormat df = new DecimalFormat("#.##");
 
 
+    /**
+     * Listar contenido carpeta.
+     *
+     * @param rutaCarpeta the ruta carpeta
+     */
     public void listarContenidoCarpeta(String rutaCarpeta) {
         // Crear un objeto de tipo File con la ruta de la carpeta
         File carpeta = new File(rutaCarpeta);
@@ -41,6 +52,11 @@ public class Directorio {
         }
     }
 
+    /**
+     * Percent files.
+     *
+     * @param pathDirectory the path directory
+     */
     public void percentFiles(String pathDirectory) {
 
         // Especificar la ruta del directorio a analizar

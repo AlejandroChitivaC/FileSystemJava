@@ -12,13 +12,27 @@ import java.util.Scanner;
 import javax.swing.*;
 
 
+/**
+ * The type Archivo.
+ */
 public class Archivo {
+    /**
+     * The Txt file.
+     */
     File txtFile = new File("src/archivo-1.txt");
 
+    /**
+     * The constant view.
+     */
     public static Vista view = new Vista();
     private static DecimalFormat df = new DecimalFormat("#.##");
 
-    // Método para obtener el tamaño de un archivo en bytes, kilobytes y megabytes
+    /**
+     * Gets file size.
+     *
+     * @param archivo the archivo
+     */
+// Método para obtener el tamaño de un archivo en bytes, kilobytes y megabytes
     public void getFileSize(File archivo) {
 
         df.setRoundingMode(RoundingMode.DOWN);
@@ -33,6 +47,13 @@ public class Archivo {
         view.showMsj("El tamaño del archivo es: " + mb + " Megabytes");
     }
 
+    /**
+     * Create csv file.
+     *
+     * @param txtFile the txt file
+     * @param csvFile the csv file
+     * @return the file
+     */
     public static File createCsv(File txtFile, File csvFile) {
         try (BufferedReader lector = new BufferedReader(new FileReader(txtFile)); FileWriter writer = new FileWriter(csvFile)) {
             // Leer cada línea del archivo de texto y escribir en el archivo CSV
@@ -59,7 +80,10 @@ public class Archivo {
         return csvFile;
     }
 
-    // Método para procesar un archivo CSV y contar los delitos por diferentes categorías
+    /**
+     * Analizar archivo delitos.
+     */
+// Método para procesar un archivo CSV y contar los delitos por diferentes categorías
     public void analizarArchivoDelitos() {
 
         // Crear un objeto File para representar el archivo CSV
@@ -139,6 +163,13 @@ public class Archivo {
     }
 
 
+    /**
+     * Mostrar tabla.
+     *
+     * @param datos         the datos
+     * @param titulo        the titulo
+     * @param nombreColumna the nombre columna
+     */
     public void mostrarTabla(Map<String, Integer> datos, String titulo, String nombreColumna) {
         DecimalFormat df = new DecimalFormat("0.00");
         int totalDelitos = datos.values().stream().mapToInt(Integer::intValue).sum();
@@ -162,6 +193,13 @@ public class Archivo {
     }
 
 
+    /**
+     * Split file.
+     *
+     * @param inputFile    the input file
+     * @param outputFolder the output folder
+     * @param numFiles     the num files
+     */
     public static void splitFile(String inputFile, String outputFolder, int numFiles) {
         try (Scanner scanner = new Scanner(new File(inputFile))) {
             int numRecords = 1;
@@ -183,6 +221,12 @@ public class Archivo {
     }
 
 
+    /**
+     * Run bat on folder.
+     *
+     * @param folderPath the folder path
+     * @param fileName   the file name
+     */
     public void runBatOnFolder(String folderPath, String fileName) {
         try {
             // Construir el comando para ejecutar el archivo bat en la carpeta especificada
@@ -207,10 +251,20 @@ public class Archivo {
         }
     }
 
+    /**
+     * Gets txt file.
+     *
+     * @return the txt file
+     */
     public File getTxtFile() {
         return txtFile;
     }
 
+    /**
+     * Sets txt file.
+     *
+     * @param txtFile the txt file
+     */
     public void setTxtFile(File txtFile) {
         this.txtFile = txtFile;
     }

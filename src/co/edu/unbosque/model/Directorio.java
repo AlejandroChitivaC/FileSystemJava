@@ -40,6 +40,7 @@ public class Directorio {
             }
         }
     }
+
     public void percentFiles(String pathDirectory) {
 
         // Especificar la ruta del directorio a analizar
@@ -72,7 +73,6 @@ public class Directorio {
             view.consoleMsj(archivo.getName() + " - " + percent + "%");
         }
     }
-
 
 
 }

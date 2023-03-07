@@ -100,6 +100,9 @@ public class Archivo {
                     totalDelitos--;
                     continue;
                 }
+                if (modalidad.equals("MODALIDAD")) {
+                    continue;
+                }
 
 
                 // Contar delitos por género
@@ -145,6 +148,9 @@ public class Archivo {
         for (String categoria : datos.keySet()) {
             int cantidad = datos.get(categoria);
             double porcentaje = (double) cantidad / totalDelitos * 100;
+            if (datos.equals(nombreColumna)) {
+                continue;
+            }
             String percent = df.format(porcentaje);
             filas[i][0] = categoria;
             filas[i][1] = Integer.toString(cantidad);
@@ -154,7 +160,6 @@ public class Archivo {
         JTable tabla = new JTable(filas, columnas);
         JOptionPane.showMessageDialog(null, new JScrollPane(tabla), titulo, JOptionPane.PLAIN_MESSAGE);
     }
-
 
 
     public static void splitFile(String inputFile, String outputFolder, int numFiles) {

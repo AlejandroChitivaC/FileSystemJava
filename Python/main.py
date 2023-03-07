@@ -1,5 +1,5 @@
 import pandas as pd
-import pandas_profiling as pp
+import ydata_profiling as pp
 
 archivo_txt = '../src/delitos(sáb. 04-03-2023).txt'
 delimiter = '\t'
@@ -13,4 +13,5 @@ print("------------Últimos 10 registros------------", df.tail(10))
 print(df.describe())
 
 report = pp.ProfileReport(df)
-report.to_file(output_file='output.html')
+output_file = "output.html"
+report.to_file(output_file)

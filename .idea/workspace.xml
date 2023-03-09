@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ff2d9d7-a1bc-4b75-b879-e1d1788aabc7" name="Changes" comment="" />
+    <list default="true" id="4ff2d9d7-a1bc-4b75-b879-e1d1788aabc7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python/output.html" beforeDir="false" afterPath="$PROJECT_DIR$/Python/output.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +57,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.build",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -70,7 +75,20 @@
       <recent name="C:\Users\alejo\Escritorio\DatabasesWork1\src\co\edu\unbosque\controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Python.main">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="FileSystemJava" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="FileSystemJava" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AplMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="co.edu.unbosque.controller.AplMain" />
       <module name="Taller1BD" />
@@ -124,19 +142,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="FileSystemJava" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="FileSystemJava" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Taller1BD" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,15 +165,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.AplMain" />
-      <item itemvalue="Application.FileReader" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.SistemasDeArchivos" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.AplMain" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -210,7 +211,8 @@
       <workItem from="1678292726040" duration="248000" />
       <workItem from="1678293455695" duration="28000" />
       <workItem from="1678365781559" duration="394000" />
-      <workItem from="1678366210677" duration="8502000" />
+      <workItem from="1678366210677" duration="8869000" />
+      <workItem from="1678383589158" duration="439000" />
     </task>
     <servers />
   </component>
@@ -230,5 +232,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/FileSystemJava$main.coverage" NAME="main Coverage Results" MODIFIED="1678383731751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Python" />
   </component>
 </project>

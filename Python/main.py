@@ -1,7 +1,8 @@
+# Import
 import pandas as pd
 import ydata_profiling as pp
 
-archivo_txt = '../src/delitos(sáb. 04-03-2023).txt'
+archivo_txt = '../src/delitos(jue. 09-03-2023).txt'
 delimiter = '\t'
 header = None
 

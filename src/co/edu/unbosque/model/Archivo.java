@@ -163,7 +163,7 @@ public class Archivo {
 
 
     /**
-     * Método para Mostrar tabla.
+     * Méthod to show the data of the file in a table.
      *
      * @param datos         los datos
      * @param titulo        el titulo
@@ -197,7 +197,7 @@ public class Archivo {
      *
      * @param inputFile    the input file
      * @param outputFolder the output folder
-     * @param numFiles     the num files
+     * @param numFiles     the number of files that will go to create
      */
     public static void splitFile(String inputFile, String outputFolder, int numFiles) {
         try (Scanner scanner = new Scanner(new File(inputFile))) {
@@ -234,7 +234,8 @@ public class Archivo {
 
             // Iniciar el proceso
             Process proceso = pb.start();
-            view.showWarning("La ejecución de los procesos .bat han iniciado");
+            view.showWarning("The execution of the .bat processes have started, please wait until the processes is finished");
+
 
             view.consoleMsj(proceso.info().toString());
 
@@ -249,24 +250,5 @@ public class Archivo {
             e.printStackTrace();
         }
     }
-
-    /**
-     * Gets txt file.
-     *
-     * @return the txt file
-     */
-    public File getTxtFile() {
-        return txtFile;
-    }
-
-    /**
-     * Sets txt file.
-     *
-     * @param txtFile the txt file
-     */
-    public void setTxtFile(File txtFile) {
-        this.txtFile = txtFile;
-    }
-
 
 }

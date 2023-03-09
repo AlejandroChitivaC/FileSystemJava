@@ -1,22 +1,20 @@
 package co.edu.unbosque.view;
 
+
 import co.edu.unbosque.model.Archivo;
 import co.edu.unbosque.model.Directorio;
 
 import javax.swing.*;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-
-import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  * The type Vista.
  */
 public class Vista {
     /**
-     * The Model.
+     * The Model, instance of Archivo.
      */
     Archivo model = new Archivo();
     /**
@@ -34,10 +32,10 @@ public class Vista {
      */
     public void mainMenu() {
         try {
-            int opcion = Integer.parseInt(JOptionPane.showInputDialog("Seleccione una opción:\n" +
-                    "1. Subir archivo\n"));
+            int opcion = Integer.parseInt(JOptionPane.showInputDialog("Please choose an option:\n" +
+                    "1. Upload file (archivo-1.txt)\n"));
             if (opcion != 1) {
-                showError("Opcion no valida!");
+                showError("Incorrect Option, try again!");
                 mainMenu();
             }
             if (opcion == 1) {
@@ -46,36 +44,36 @@ public class Vista {
             }
 
         } catch (NumberFormatException e) {
-            showError("Debe ingresar un número");
+            showError("You must enter a number!");
             mainMenu();
         }
 
     }
 
     /**
-     * Menu options.
+     * Menu options
      */
     public void menuOptions() {
         File csv;
         csv = new File("src/archivo-1.csv");
         try {
-            int opcion = Integer.parseInt(JOptionPane.showInputDialog("Seleccione una opción:\n" +
-                    "1. Procesar archivo\n" +
-                    "2. Salir..."));
+            int opcion = Integer.parseInt(JOptionPane.showInputDialog("Please choose an option:\n" +
+                    "1. Process file\n" +
+                    "2. Exit..."));
             if (opcion > 2 || opcion < 1) {
-                showError("Opcion no valida");
+                showError("Incorrect Option, try again!");
                 menuOptions();
             }
             switch (opcion) {
                 case 1:
                     model.getFileSize(txtFile);
-                    csv = model.createCsv(txtFile, new File("src/archivo-1.csv"));
+                    csv = Archivo.createCsv(txtFile, new File("src/archivo-1.csv"));
                     model.analizarArchivoDelitos();
                     break;
                 case 2:
                     //Creo la carpeta Apellidos1_Apellidos2 para guardar los archivos
                     model.runBatOnFolder("src", "Folder_files.bat");
-                    model.splitFile("src/archivo-1.txt", "src/ChitivaCastillo_PedrazaSanabria/Numeros", 20);
+                    Archivo.splitFile("src/archivo-1.txt", "src/ChitivaCastillo_PedrazaSanabria/Numeros", 20);
                     //Listar contenido de la carpeta ChitivaCastillo_PedrazaSanabria
                     dir.listarContenidoCarpeta("src/ChitivaCastillo_PedrazaSanabria");
                     //Listar contenido de la carpeta Numeros
@@ -92,7 +90,7 @@ public class Vista {
                     break;
             }
         } catch (NumberFormatException e) {
-            showError("Debe ingresar un número");
+            showError("You must enter a number!");
             menuOptions();
         }
 
@@ -101,27 +99,16 @@ public class Vista {
     /**
      * Show msj.
      *
-     * @param msj the msj
+     * @param msj the message that will be shown
      */
     public void showMsj(String msj) {
         JOptionPane.showMessageDialog(null, msj);
     }
 
     /**
-     * Gets msj.
-     *
-     * @param msj the msj
-     * @return the msj
-     */
-    public String getMsj(String msj) {
-        JOptionPane.showInputDialog(null, (msj));
-        return msj;
-    }
-
-    /**
      * Console msj.
      *
-     * @param msj the msj
+     * @param msj the message that will be shown, but this will be show in the console
      */
     public void consoleMsj(String msj) {
         System.out.println(msj);
@@ -130,7 +117,7 @@ public class Vista {
     /**
      * Show error.
      *
-     * @param msj the msj
+     * @param msj the message that will be shown
      */
     public void showError(String msj) {
         JOptionPane.showMessageDialog(null, msj, "Error", JOptionPane.ERROR_MESSAGE);
@@ -139,15 +126,15 @@ public class Vista {
     /**
      * Show warning.
      *
-     * @param msj the msj
+     * @param msj the message that will be shown
      */
     public void showWarning(String msj) {
-        JOptionPane.showMessageDialog(null, msj, "Alerta", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null, msj, "Alert", JOptionPane.WARNING_MESSAGE);
     }
 
 
     /**
-     * Upload file.
+     * Upload file and save it in the src folder.
      */
     public void uploadFile() {
         // Crear un JFileChooser
@@ -177,35 +164,17 @@ public class Vista {
                 in.close();
                 out.close();
 
-                JOptionPane.showMessageDialog(null, "Archivo subido exitosamente");
+                JOptionPane.showMessageDialog(null, "File uploaded succesfully");
 
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error al subir el archivo");
+                JOptionPane.showMessageDialog(null, "Failed to upload file");
             }
 
         } else {
             // El usuario ha cancelado la selección
-            this.showError("Selección cancelada");
+            this.showError("Selection canceled");
         }
         menuOptions();
     }
 
-    /**
-     * Gets txt file.
-     *
-     * @return the txt file
-     */
-//GETTER AND SETTER OF THE FILE
-    public File getTxtFile() {
-        return txtFile;
-    }
-
-    /**
-     * Sets txt file.
-     *
-     * @param txtFile the txt file
-     */
-    public void setTxtFile(File txtFile) {
-        this.txtFile = txtFile;
-    }
 }

@@ -13,28 +13,28 @@ public class Directorio {
      * The constant view.
      */
     public static Vista view = new Vista();
-    private static DecimalFormat df = new DecimalFormat("#.##");
+    private static final DecimalFormat df = new DecimalFormat("#.##");
 
 
     /**
-     * Listar contenido carpeta.
+     * List folder contents, by means of a ".bat" file.
      *
-     * @param rutaCarpeta the ruta carpeta
+     * @param rutaCarpeta the path of the folder to analyze carpeta
      */
     public void listarContenidoCarpeta(String rutaCarpeta) {
         // Crear un objeto de tipo File con la ruta de la carpeta
         File carpeta = new File(rutaCarpeta);
-        view.showMsj("Se va a listar el contenido de la carpeta: " + rutaCarpeta);
+        view.showMsj("The contents of the folder will be listed: " + rutaCarpeta);
 
         // Verificar si la carpeta existe
         if (!carpeta.exists()) {
-            view.showError("La ruta no es una carpeta.");
+            view.showError("The path isn't a folder.");
             return;
         }
 
         // Verificar si la ruta es una carpeta
         if (!carpeta.isDirectory()) {
-            view.showError("La ruta no es una carpeta.");
+            view.showError("The path isn't a folder.");
             return;
         }
 
@@ -42,12 +42,12 @@ public class Directorio {
         File[] archivos = carpeta.listFiles();
 
         // Recorrer la lista de archivos y carpetas y mostrar el nombre en la consola
-        System.out.println("Contenido de la carpeta: " + rutaCarpeta);
+        System.out.println("Folder content: " + rutaCarpeta);
         for (File archivo : archivos) {
             if (archivo.isDirectory()) {
-                view.consoleMsj("[Carpeta] " + archivo.getName());
+                view.consoleMsj("[Folder] " + archivo.getName());
             } else {
-                view.consoleMsj("[Archivo] " + archivo.getName());
+                view.consoleMsj("[File] " + archivo.getName());
             }
         }
     }
@@ -75,7 +75,7 @@ public class Directorio {
             }
         }
         String totalSize = df.format(tamanoTotal);
-        view.showMsj("El tamaño total del directorio es: " + totalSize + " bytes");
+        view.showMsj("The total size of the directory is: " + totalSize + " bytes");
 
         // Calcular el porcentaje del tamaño de cada archivo
         for (File archivo : archivos) {
@@ -84,7 +84,7 @@ public class Directorio {
             if (archivo.isFile()) {
                 porcentaje = ((double) archivo.length() / tamanoTotal * 100);
                 percent = df.format(porcentaje);
-                System.out.println("Archivo " + archivo.getName() + " - " + percent + "%");
+                System.out.println("File " + archivo.getName() + " - " + percent + "%");
             }
             view.consoleMsj(archivo.getName() + " - " + percent + "%");
         }

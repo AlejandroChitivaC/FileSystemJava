@@ -2,14 +2,13 @@ package co.edu.unbosque.model;
 
 import co.edu.unbosque.view.Vista;
 
+import javax.swing.*;
 import java.io.*;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
-import javax.swing.*;
 
 
 /**
@@ -25,12 +24,12 @@ public class Archivo {
      * The constant view.
      */
     public static Vista view = new Vista();
-    private static DecimalFormat df = new DecimalFormat("#.##");
+    private static final DecimalFormat df = new DecimalFormat("#.##");
 
     /**
      * Gets file size.
      *
-     * @param archivo the archivo
+     * @param archivo the file txt
      */
 // Método para obtener el tamaño de un archivo en bytes, kilobytes y megabytes
     public void getFileSize(File archivo) {
@@ -42,9 +41,9 @@ public class Archivo {
         double megabytes = s / (1024 * 1024);
         String mb = df.format(megabytes);
 
-        view.showMsj("El tamaño del archivo es: " + size + " bytes");
-        view.showMsj("El tamaño del archivo es: " + kb + " Kilobytes");
-        view.showMsj("El tamaño del archivo es: " + mb + " Megabytes");
+        view.showMsj("The file size is: " + size + " bytes");
+        view.showMsj("The file size is: " + kb + " Kilobytes");
+        view.showMsj("The file size is: " + mb + " Megabytes");
     }
 
     /**
@@ -72,16 +71,16 @@ public class Archivo {
                 writer.append("\n");
 
             }
-            view.showMsj("El archivo se ha convertido a CSV correctamente.");
+            view.showMsj("The file has been converted to CSV successfully.");
         } catch (IOException e) {
             e.printStackTrace();
-            view.showError("Error al leer o escribir el archivo: " + e.getMessage());
+            view.showError("Error reading or writing file: " + e.getMessage());
         }
         return csvFile;
     }
 
     /**
-     * Analizar archivo delitos.
+     * Method to analyze the file uploaded.
      */
 // Método para procesar un archivo CSV y contar los delitos por diferentes categorías
     public void analizarArchivoDelitos() {
@@ -99,7 +98,7 @@ public class Archivo {
         }
 
 
-        // Crear un objeto HashMap para almacenar los contadores por género
+        // Crear un objeto de tipo HashMap para almacenar los contadores por género
         Map<String, Integer> contadoresGenero = new HashMap<>();
         Map<String, Integer> contadoresZona = new HashMap<>();
         Map<String, Integer> contadoresMes = new HashMap<>();
@@ -164,11 +163,11 @@ public class Archivo {
 
 
     /**
-     * Mostrar tabla.
+     * Método para Mostrar tabla.
      *
-     * @param datos         the datos
-     * @param titulo        the titulo
-     * @param nombreColumna the nombre columna
+     * @param datos         los datos
+     * @param titulo        el titulo
+     * @param nombreColumna el nombre de la columna
      */
     public void mostrarTabla(Map<String, Integer> datos, String titulo, String nombreColumna) {
         DecimalFormat df = new DecimalFormat("0.00");

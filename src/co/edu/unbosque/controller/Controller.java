@@ -10,11 +10,11 @@ import java.io.File;
  */
 public class Controller {
     /**
-     * The Model.
+     * The instance of the Model.
      */
     public Archivo model = new Archivo();
     /**
-     * The View.
+     * The instance of the View.
      */
     public Vista view = new Vista();
     /**
@@ -31,7 +31,7 @@ public class Controller {
     }
 
     /**
-     * Funcionar.
+     * The method Funcionar(), is the main method of the program that calls all the methods of the other classes.
      */
     public void funcionar() {
         txtFile = new File("src/archivo-1.txt");
